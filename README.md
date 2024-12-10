@@ -1,99 +1,167 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
+# <h1 align="center">Social App in NestJs</h1>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+## <h2>Overview</h2>
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+This project is a RESTful API built with **NestJS** that implements a **Post and Follow System**. It features **JWT Authentication** for secure access, allowing users to create posts, follow/unfollow other users, and comment on posts from users they follow. The application leverages PostgreSQL for data persistence and TypeORM as the ORM.
 
-## Description
+The system supports role-based access control, allowing for efficient CRUD operations, secure user authentication, and dynamic news feeds for users based on their follow relationships.
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## <h2>Features</h2>
 
-## Project setup
+- <strong>User Authentication</strong>: JWT-based authentication for secure user login and access to protected endpoints.
+- <strong>Post Management</strong>: Users can create, update, delete, and retrieve posts.
+- <strong>Follow System</strong>: Users can follow and unfollow others. The system manages the followers and following relationships.
+- <strong>Comments</strong>: Users can add comments to posts and view comments from others.
+- <strong>News Feed</strong>: Users can view a personalized news feed consisting of posts from users they follow.
 
-```bash
-$ npm install
-```
+## <h2>Tech Stack</h2>
 
-## Compile and run the project
+- <strong>NestJS</strong>: A progressive Node.js framework for building efficient, reliable, and scalable applications.
+- <strong>PostgreSQL</strong>: Relational database used to store user data, posts, comments, and follow relationships.
+- <strong>TypeORM</strong>: An ORM for TypeScript and JavaScript, used to interact with PostgreSQL.
+- <strong>JWT (JSON Web Token)</strong>: A compact, URL-safe means of representing claims to securely transmit information between parties.
+- <strong>Swagger</strong>: API documentation tool integrated with NestJS for easy exploration of API endpoints.
 
-```bash
-# development
-$ npm run start
+## <h2>Setup and Installation</h2>
 
-# watch mode
-$ npm run start:dev
+Follow the steps below to get the application up and running:
 
-# production mode
-$ npm run start:prod
-```
+### <h3>Prerequisites</h3>
 
-## Run tests
+Before running the project, ensure that you have the following installed:
+
+- **Node.js** (v14.x or later)
+- **PostgreSQL** (or Docker to run PostgreSQL container)
+- **npm** or **yarn** package manager
+
+### <h3>Clone the Repository</h3>
 
 ```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+git clone https://github.com/yourusername/your-repository-name.git
+cd your-repository-name
 ```
 
-## Deployment
-
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
-
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
+<h3>Install Dependencies</h3>
+Install all required dependencies using npm :
 
 ```bash
-$ npm install -g mau
-$ mau deploy
+npm install
 ```
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+<h3>Setup PostgreSQL Database</h3>
+Local PostgreSQL:
 
-## Resources
+Ensure that you have PostgreSQL running locally.
+Create a new database (e.g., nestjs-posts).
+Database Configuration:
 
-Check out a few resources that may come in handy when working with NestJS:
+In your src/config/database.config.ts, update the database connection settings to match your local or remote PostgreSQL instance.
+Example configuration:
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+```bash
+export const databaseConfig = {
+  type: 'postgres',
+  host: 'localhost',
+  port: 5432,
+  username: 'postgres',
+  password: 'yourpassword',
+  database: 'nestjs-posts',
+  entities: [PostEntity, User, Comment],  // Include all entities here
+  synchronize: true,
+};
+```
 
-## Support
+<h3>Environment Variables</h3>
+Create a .env file in the root directory and define the following environment variables:
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+```bash
+JWT_SECRET=your_jwt_secret_key
+DATABASE_HOST=localhost
+DATABASE_PORT=5432
+DATABASE_USERNAME=postgres
+DATABASE_PASSWORD=yourpassword
+DATABASE_NAME=nestjs-posts
+```
 
-## Stay in touch
+<h3>Run the Application</h3>
+Start the NestJS server:
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+```bash
+npm run start
 
-## License
+```
 
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+
+The API will now be accessible at http://localhost:3000.
+
+<h3>Swagger UI</h3>
+Once the application is running, you can view the Swagger documentation for the API by navigating to:
+
+```bash
+  http://localhost:3000/api
+```
+
+This interface provides an easy-to-use way to interact with the API, test endpoints, and see the detailed descriptions of each route.
+
+<h2>API Endpoints</h2>
+The following are the main endpoints provided by the application:
+
+<h3>Authentication</h3>
+POST /auth/login: Login and get a JWT token.
+Request body: { "username": "user1", "password": "password123" }
+
+POST /auth/register: Register a new user.
+
+<h3>User Profile</h3>
+GET /profile: Get the authenticated user's profile.
+<h3>Posts</h3>
+POST /posts: Create a new post.
+GET /posts: Retrieve all posts with pagination.
+GET /posts/:id: Retrieve a specific post by ID.
+PUT /posts/:id: Update a post.
+DELETE /posts/:id: Delete a post.
+<h3>Follow System</h3>
+POST /follow/:followedId: Follow a user by their ID.
+DELETE /follow/:followedId: Unfollow a user by their ID.
+GET /follow/following: Get a list of users the authenticated user is following.
+GET /follow/followers: Get a list of users following the authenticated user.
+<h3>Comments</h3>
+POST /posts/:id/comments: Add a comment to a post.
+GET /posts/:id/comments: Get all comments on a post.
+<h3>News Feed</h3>
+GET /posts/newsFeed: Get the news feed for the authenticated user (posts from followed users).
+<h2>Database Schema</h2>
+The following entities are used in the database:
+
+User: Stores user data (ID, username, password hash).
+Post: Stores posts created by users (ID, content, user ID).
+Comment: Stores comments on posts (ID, content, post ID, user ID).
+Follow: Stores follow relationships between users (follower ID, followed ID).
+<h2>Authentication</h2>
+JWT authentication is used to protect endpoints. After logging in, you will receive a JWT token, which you need to include in the Authorization header as a Bearer token when accessing protected endpoints.
+
+Example header:
+
+```bash
+Authorization: Bearer your_jwt_token
+```
+
+<h2>Testing</h2>
+To test the endpoints, you can use Postman or Swagger UI to send requests with the JWT token included in the Authorization header.
+
+<h2>Contributing</h2>
+Feel free to fork the repository, make improvements, and submit pull requests. If you encounter any bugs or have suggestions for enhancements, please open an issue.
+
+<h2>License</h2>
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+Thank you for using the Post and Follow System! If you have any questions or need further assistance, feel free to reach out.
+
+
+### Key Enhancements:
+
+1. Added HTML tags like `<h1>`, `<h2>`, `<h3>`, and `<strong>` to make the README more structured and visually appealing.
+2. Each section is clearly marked, providing a clear structure to the document.
+3. The content is ready to be copied directly into a `README.md` file for GitHub.
+
+You can copy and paste this content into your `README.md` file, and GitHub will render the HTML tags appropriately. Let me know if you need any further adjustments!
