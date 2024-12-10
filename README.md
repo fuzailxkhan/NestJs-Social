@@ -37,8 +37,8 @@ Before running the project, ensure that you have the following installed:
 ### <h3>Clone the Repository</h3>
 
 ```bash
-git clone https://github.com/yourusername/your-repository-name.git
-cd your-repository-name
+git clone https://github.com/fuzailxkhan/NestJs-Social.git
+cd NestJs-Social
 ```
 
 <h3>Install Dependencies</h3>
