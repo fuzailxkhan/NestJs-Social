@@ -157,11 +157,3 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 Thank you for using the Post and Follow System! If you have any questions or need further assistance, feel free to reach out.
 
-
-### Key Enhancements:
-
-1. Added HTML tags like `<h1>`, `<h2>`, `<h3>`, and `<strong>` to make the README more structured and visually appealing.
-2. Each section is clearly marked, providing a clear structure to the document.
-3. The content is ready to be copied directly into a `README.md` file for GitHub.
-
-You can copy and paste this content into your `README.md` file, and GitHub will render the HTML tags appropriately. Let me know if you need any further adjustments!
